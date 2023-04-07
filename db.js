@@ -11,13 +11,14 @@ const { Pool } = require('pg');
 //   // ssl: { rejectUnauthorized: false },
 // });
 
-module.exports = pool;
+// module.exports = pool;
 const pool = new Pool({
   user: process.env.PG_USER,
   password: process.env.PG_PASSWORD,
   host: process.env.PG_HOST,
   port: process.env.PG_PORT,
   database: process.env.PG_DATABASE,
+  ssl: false,
 });
 // const { Pool } = require("pg");
 
@@ -25,4 +26,4 @@ const pool = new Pool({
 //   connectionString: process.env.DATABASE_URL,
 //   ssl: false,
 // });
-// module.exports = pool;
+module.exports = pool;
